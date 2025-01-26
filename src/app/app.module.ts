@@ -8,6 +8,8 @@ import { FooterComponent } from './includes/footer/footer.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CardComponent } from './includes/card/card.component';
+import { CardListComponent } from './includes/card-list/card-list.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    CardComponent,
+    CardListComponent,
   ],
   imports: [
     BrowserModule,
