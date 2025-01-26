@@ -7,6 +7,7 @@ import { NavbarComponent } from './includes/navbar/navbar.component';
 import { FooterComponent } from './includes/footer/footer.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { RegisterComponent } from './auth/register/register.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
