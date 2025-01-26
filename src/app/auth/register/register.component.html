@@ -8,10 +8,11 @@
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
           </div>
           <input
-            name=""
+            name="username"
             class="form-control"
             placeholder="Full name"
             type="text"
+            [(ngModel)]="userRegister.username"
           />
         </div>
         <!-- form-group// -->
@@ -70,7 +71,7 @@
         </div>
         <!-- form-group// -->
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block" (click)="InitilizeAuthRequest()">
             Create Account
           </button>
         </div>

@@ -10,6 +10,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CardComponent } from './includes/card/card.component';
 import { CardListComponent } from './includes/card-list/card-list.component';
+import { CreatePostComponent } from './includes/create-post/create-post.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,10 +23,12 @@ import { CardListComponent } from './includes/card-list/card-list.component';
     RegisterComponent,
     CardComponent,
     CardListComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()

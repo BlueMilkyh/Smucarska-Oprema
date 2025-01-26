@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="card bg-light">
+      <article class="card-body mx-auto" style="max-width: 400px">
+        <h4 class="card-title mt-3 text-center">Create Post</h4>
+        <form>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Previous Owners </span>
+            </div>
+            <input
+              name=""
+              class="form-control"
+              placeholder="How many Previous Owners did skis have?"
+              type="text"
+            />
+          </div>
+          <!-- form-group// -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Radius</span>
+            </div>
+            <input
+              name=""
+              class="form-control"
+              placeholder="Radius in cm"
+              type="text"
+            />
+          </div>
+          <!-- form-group// -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Ski length</span>
+            </div>
+            <input
+              name=""
+              class="form-control"
+              placeholder="length in cm"
+              type="text"
+            />
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Price</span>
+            </div>
+            <input
+              name=""
+              class="form-control"
+              placeholder="Price in $"
+              type="text"
+            />
+          </div>
+          <ul class="d-flex mr-auto">
+            Rating:
+            <li *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+              <i
+                class="fas fa-star"
+                [style.color]="selectedRating >= star ? 'gold' : 'gray'"
+                (click)="setRating(star)"
+              ></i>
+            </li>
+          </ul>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Create Post
+            </button>
+          </div>
+          <!-- form-group// -->
+          
+        </form>
+      </article>
+    </div>
+    <!-- card.// -->
+  </div>
+  <!--container end.//-->
+  
