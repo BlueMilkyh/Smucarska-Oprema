@@ -1,85 +1,52 @@
-<div class="container">
-  <div class="card bg-light">
-    <article class="card-body mx-auto" style="max-width: 400px">
-      <h4 class="card-title mt-3 text-center">Register</h4>
-      <form>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-          </div>
-          <input
-            name="username"
-            class="form-control"
-            placeholder="Full name"
-            type="text"
-            [(ngModel)]="userRegister.username"
-          />
-        </div>
-        <!-- form-group// -->
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-envelope"></i>
-            </span>
-          </div>
-          <input
-            name=""
-            class="form-control"
-            placeholder="Email address"
-            type="email"
-          />
-        </div>
-        <!-- form-group// -->
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-          </div>
-          <select class="custom-select" style="max-width: 120px">
-            <option selected="">+386</option>
-            <option value="1">+111</option>
-            <option value="2">+123</option>
-          </select>
-          <input
-            name=""
-            class="form-control"
-            placeholder="Phone number"
-            type="text"
-          />
-        </div>
-
-        <!-- form-group end.// -->
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-          </div>
-          <input
-            class="form-control"
-            placeholder="Create password"
-            type="password"
-          />
-        </div>
-        <!-- form-group// -->
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-          </div>
-          <input
-            class="form-control"
-            placeholder="Repeat password"
-            type="password"
-          />
-        </div>
-        <!-- form-group// -->
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block" (click)="InitilizeAuthRequest()">
-            Create Account
-          </button>
-        </div>
-        <!-- form-group// -->
-        <p class="text-center">Have an account? <a routerLink="../login">Log In</a></p>
-      </form>
-    </article>
+<form>
+  <h3>Register</h3>
+  <div class="mb-3">
+    <label for="register-username" class="form-label">Username</label>
+    <input type="text" 
+           class="form-control" 
+           id="register-username" 
+           aria-describedby="register-usernameHelp"
+           name="username"
+           [(ngModel)]="userRegister.username">
+    <div id="register-usernameHelp" class="form-text">Username is mandatory.</div>
   </div>
-  <!-- card.// -->
-</div>
-<!--container end.//-->
+  <div class="mb-3">
+    <label for="register-password" class="form-label">Password</label>
+    <input type="password" 
+           class="form-control" 
+           id="register-password"
+           name="password"
+           [(ngModel)]="userRegister.password">
+  </div>
+  <div class="mb-3">
+    <label for="register-username" class="form-label">Username</label>
+    <input type="text" 
+           class="form-control" 
+           id="register-username" 
+           aria-describedby="register-usernameHelp"
+           name="username"
+           [(ngModel)]="userRegister.repeatpassword">
+    <div id="register-usernameHelp" class="form-text">Username is mandatory.</div>
+  </div>
+  <div class="mb-3">
+    <label for="register-username" class="form-label">Username</label>
+    <input type="text" 
+           class="form-control" 
+           id="register-username" 
+           aria-describedby="register-usernameHelp"
+           name="username"
+           [(ngModel)]="userRegister.email">
+    <div id="register-usernameHelp" class="form-text">Username is mandatory.</div>
+  </div>
+  <div class="mb-3">
+    <label for="register-username" class="form-label">Username</label>
+    <input type="text" 
+           class="form-control" 
+           id="register-username" 
+           aria-describedby="register-usernameHelp"
+           name="username"
+           [(ngModel)]="userRegister.phone">
+    <div id="register-usernameHelp" class="form-text">Username is mandatory.</div>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="register()">Register</button>
+</form>
