@@ -13,19 +13,22 @@ import { User } from '../../model/user';
 export class RegisterComponent implements OnInit {
   userRegister!: User;
 
-  constructor() {}
+  constructor(authService: AuthService, router: Router) {
+    this.InitilizeAuthRequest();
+  }
 
   ngOnInit(): void {
     console.log('ngOnInit is running!');
-    this.InitilizeAuthRequest();
+    
     // console.log(this.userRegister); // Check if this gets logged
   }
   register() {
-    var errors = [];
     if (this.userRegister.password != this.userRegister.repeatpassword) {
       alert('Password does not match');
-    }else {
-      errors.push();
+      return;
+    }
+    else {
+      
     }
 
     console.log(this.userRegister);

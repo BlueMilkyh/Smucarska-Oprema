@@ -71,10 +71,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "SmucarskaOprema:build:production"
+              "buildTarget": "SmucarskaOprema:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
-              "buildTarget": "SmucarskaOprema:build:development"
+              "buildTarget": "SmucarskaOprema:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
