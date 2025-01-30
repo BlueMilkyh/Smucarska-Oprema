@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../../services/posts.service';
+import { Post } from '../../model/post';
 
 @Component({
   selector: 'app-card',
@@ -7,6 +9,21 @@ import { Component } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
+PostsArray: Post[] = [];
+constructor(private postService: PostsService) { 
+  this.getPosts();
+}
+
+ngOnInit(): void {
+  console.log('ngOnInit is running!');
+  console.log(this.PostsArray);
+  // console.log(this.userRegister); // Check if this gets logged
+}
+
+getPosts() {
+ this.PostsArray = this.postService.getPosts();
+}
+
 
 }

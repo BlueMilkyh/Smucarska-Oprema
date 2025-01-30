@@ -5,13 +5,51 @@
         <form>
           <div class="form-group input-group">
             <div class="input-group-prepend">
+              <span class="input-group-text"> Title </span>
+            </div>
+            <input
+              name="Title"
+              class="form-control"
+              placeholder="Title"
+              type="text"
+              [(ngModel)]="post.title"
+            />
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Price</span>
+            </div>
+            <input
+              name="Price"
+              class="form-control"
+              placeholder="Price in $"
+              type="text"
+              [(ngModel)]="post.price"
+            />
+          </div>
+          
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
               <span class="input-group-text"> Previous Owners </span>
             </div>
             <input
-              name=""
+              name="Previous Owners"
               class="form-control"
               placeholder="How many Previous Owners did skis have?"
               type="text"
+              [(ngModel)]="post.previousOwners"
+            />
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Ski length</span>
+            </div>
+            <input
+              name="Skilength"
+              class="form-control"
+              placeholder="length in cm"
+              type="text"
+              [(ngModel)]="post.skiLength"
             />
           </div>
           <!-- form-group// -->
@@ -20,35 +58,16 @@
               <span class="input-group-text"> Radius</span>
             </div>
             <input
-              name=""
+              name="radius"
               class="form-control"
               placeholder="Radius in cm"
               type="text"
+              [(ngModel)]="post.radius"
             />
           </div>
           <!-- form-group// -->
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> Ski length</span>
-            </div>
-            <input
-              name=""
-              class="form-control"
-              placeholder="length in cm"
-              type="text"
-            />
-          </div>
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> Price</span>
-            </div>
-            <input
-              name=""
-              class="form-control"
-              placeholder="Price in $"
-              type="text"
-            />
-          </div>
+          
+         
           <ul class="d-flex mr-auto">
             Rating:
             <li *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
@@ -60,7 +79,7 @@
             </li>
           </ul>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-block"(click)="createPost()">
               Create Post
             </button>
           </div>

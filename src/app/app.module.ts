@@ -9,7 +9,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CardComponent } from './includes/card/card.component';
-import { CardListComponent } from './includes/card-list/card-list.component';
+// import { CardListComponent } from './includes/card-list/card-list.component';
 import { CreatePostComponent } from './includes/create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     CardComponent,
-    CardListComponent,
+    
     CreatePostComponent,
   ],
   imports: [
