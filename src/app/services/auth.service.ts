@@ -17,6 +17,13 @@ export class AuthService {
   setToken(token: string) {
     localStorage.setItem("authToken", token);
   }
+
+  setUserInfo(token: string) {
+    localStorage.setItem("username", token);
+    localStorage.setItem("e-mail", token);
+    localStorage.setItem("password", token);
+  }
+
   isLoggedIn(): boolean{
     if(localStorage.getItem("authToken")){
       return true;

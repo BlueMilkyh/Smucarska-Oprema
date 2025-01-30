@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { User } from '../../model/user';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,4 +12,29 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  authRequest!: User;
+  constructor(private authService: AuthService, private router: Router) { 
+    this.InitilizeAuthRequest();
+  }
+
+
+  login(){
+    this.authService.login(this.authRequest).subscribe({
+      next: (authResponse)=>{console.log(authResponse); this.authService.setToken("Bearer " + authResponse.token); 
+                              this.authService.setToken("Bearer " + authResponse.username);
+                              this.router.navigate(['/students/list']);
+      },
+      error: (err)=>{ alert("Login was unsuccessful: " + err.message) }
+    })
+  }
+
+  InitilizeAuthRequest() {
+    this.authRequest = {
+      username: '',
+      password: '',
+      repeatpassword: '',
+      email: '',
+      phone: '',
+    };
+  }
 }

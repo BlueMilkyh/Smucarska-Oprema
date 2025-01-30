@@ -12,6 +12,7 @@ import { CardComponent } from './includes/card/card.component';
 import { CardListComponent } from './includes/card-list/card-list.component';
 import { CreatePostComponent } from './includes/create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

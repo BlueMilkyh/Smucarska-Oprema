@@ -13,7 +13,7 @@ import { User } from '../../model/user';
 export class RegisterComponent implements OnInit {
   userRegister!: User;
 
-  constructor(authService: AuthService, router: Router) {
+  constructor(private authService: AuthService,private router: Router) {
     this.InitilizeAuthRequest();
   }
 
@@ -28,20 +28,27 @@ export class RegisterComponent implements OnInit {
       return;
     }
     else {
-      
+      this.authService.register(this.userRegister).subscribe({
+        next: (message) => {
+          console.log(message);
+          this.router.navigate(["/login"]);
+        },
+        error: (err) => {
+          alert(err.message);
+        },
+      });
     }
 
-    console.log(this.userRegister);
+    
   }
   InitilizeAuthRequest() {
     this.userRegister = {
-      id: 0,
       username: '',
       password: '',
       repeatpassword: '',
       email: '',
       phone: '',
     };
-    console.log(this.userRegister);
+   
   }
 }

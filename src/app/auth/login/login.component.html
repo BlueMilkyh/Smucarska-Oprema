@@ -15,31 +15,40 @@
           <span class="bg-light">OR</span>
         </p>
         <form>
+          <label for="register-username">Username</label>
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
             <input
-              name=""
+              type="text"
               class="form-control"
-              placeholder="E-mail address"
-              type="email"
+              id="register-username"
+              aria-describedby="register-usernameHelp"
+              name="username"
+              placeholder="Insert your username"
+              [(ngModel)]="authRequest.username"
             />
           </div>
           <!-- form-group// -->
+          <label for="register-password">Password</label>
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
             <input
-              class="form-control"
-              placeholder="Repeat password"
               type="password"
+              class="form-control"
+              id="register-password"
+              aria-describedby="register-passwordHelp"
+              name="password"
+              placeholder="Insert your password"
+              [(ngModel)]="authRequest.password"
             />
           </div>
           <!-- form-group// -->
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-block" (click)="login()">
               Login
             </button>
           </div>

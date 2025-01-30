@@ -9,18 +9,27 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Iskanje</a>
+            <a class="nav-link" aria-current="page" href="#">Domov</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vsi produkti</a>
-          </li>
+          @if(checkLoggedIn()){
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" routerLink="/create">Nova Objava</a>
+            </li>
+          }
         </ul>
         <form class="d-flex">
+          @if(!checkLoggedIn()){
             <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center mx-auto loginbutton" routerLink="login">
-                <i class="material-icons">login</i>
-                Login
-            </button>
-            <button type="button" class="btn btn-outline-primary d-flex align-items-center justify-content-center mx-auto loginbutton ms-2" routerLink="register"><i class="material-icons">how_to_reg</i>Register</button>
+              <i class="material-icons">login</i>
+              Login
+          </button>
+          <button type="button" class="btn btn-outline-primary d-flex align-items-center justify-content-center mx-auto loginbutton ms-2" routerLink="register"><i class="material-icons">how_to_reg</i>Register</button>
+          }
+          @else {
+            <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center mx-auto loginbutton" (click)="logout()">
+              <i class="material-icons">logout</i>
+              Logout </button>
+          }
         </form>
       </div>
     </div>
