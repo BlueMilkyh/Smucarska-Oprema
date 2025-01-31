@@ -20,9 +20,9 @@ export class LoginComponent {
 
   login(){
     this.authService.login(this.authRequest).subscribe({
-      next: (authResponse)=>{console.log(authResponse); this.authService.setToken("Bearer " + authResponse.token); 
-                              this.authService.setToken("Bearer " + authResponse.username);
-                              this.router.navigate(['/students/list']);
+      next: (authResponse)=>{console.log(authResponse); this.authService.setToken("Bearer " + authResponse.token);
+                            this.authService.setUserInfo(authResponse.username); 
+                              this.router.navigate(['']);
       },
       error: (err)=>{ alert("Login was unsuccessful: " + err.message) }
     })

@@ -16,11 +16,13 @@
               <div class="w-100">
                 <div class="d-flex flex-md-row flex-column">
                   <h3 class="mr-3">{{post.title}}</h3>
-                  <div class="ml-auto text-right">
-                    <button class="btn btn-danger" (click)="removePost($index)">
-                      <i class="material-icons">highlight_remove</i>
-                    </button>
-                  </div>
+                  @if(post.username == username){
+                    <div class="ml-auto text-right">
+                      <button class="btn btn-danger" (click)="removePost($index)">
+                        <i class="material-icons">highlight_remove</i>
+                      </button>
+                    </div>
+                  }
                 </div>
                 <hr />
                 <div class="container-fluid">

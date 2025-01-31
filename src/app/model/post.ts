@@ -6,4 +6,5 @@ export interface Post {
     skiLength: number,
     radius: number | string,
     rating: number,
+    username: string | null,
 }

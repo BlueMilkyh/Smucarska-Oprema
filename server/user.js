@@ -9,7 +9,8 @@ router.post('/login', (req, res) => {
   if (users[user.username] && users[user.username] === user.password) {
     res.json({
       msg: 'Successfully logged in',
-      token: jwt.sign({user: user.username}, 'SECRET')
+      token: jwt.sign({user: user.username}, 'SECRET'),
+      username: user.username
     });
   } else {
     res.status(400).json({msg: 'Invalid username or password'});

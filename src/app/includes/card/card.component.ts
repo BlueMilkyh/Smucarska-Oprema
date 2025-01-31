@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { Post } from '../../model/post';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-card',
@@ -12,8 +13,10 @@ import { Post } from '../../model/post';
 export class CardComponent implements OnInit {
   PostsArray: Post[] = [];
   loopArray = new Array(5);
-  constructor(private postService: PostsService) {
+  username: string = "";
+  constructor(private postService: PostsService, private authService: AuthService) {
     this.getPosts();
+    this.username = this.authService.getUserInfo() || "";
   }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@ import { Post } from '../../model/post';
 import { PostsService } from '../../services/posts.service';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-create-post',
   standalone: false,
@@ -15,7 +16,7 @@ export class CreatePostComponent {
   post!: Post;
   selectedRating = 0;
   
-  constructor(private postService: PostsService, private router: Router) {
+  constructor(private postService: PostsService, private router: Router, private authSercice: AuthService) {
     this.InitilizePost();
   }
 
@@ -43,6 +44,7 @@ export class CreatePostComponent {
       skiLength: 0,
       radius: '',
       rating: this.getRating(),
+      username: this.authSercice.getUserInfo(),
     };
   }
 }

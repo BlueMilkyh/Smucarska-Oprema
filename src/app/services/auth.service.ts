@@ -19,9 +19,11 @@ export class AuthService {
   }
 
   setUserInfo(token: string) {
-    localStorage.setItem("username", token);
-    localStorage.setItem("e-mail", token);
-    localStorage.setItem("password", token);
+    localStorage.setItem("loggedUsername", token);
+  }
+
+  getUserInfo(): string | null {
+    return localStorage.getItem("loggedUsername");
   }
 
   isLoggedIn(): boolean{
@@ -38,5 +40,6 @@ export class AuthService {
   }
   logout(){
     localStorage.removeItem("authToken");
+    localStorage.removeItem("loggedUsername");
   }
 }
