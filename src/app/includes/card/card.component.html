@@ -1,4 +1,4 @@
-<div *ngFor="let post of PostsArray">
+@for (post of PostsArray; track $index) {
   <div class="container pt-5">
     <div class="row">
       <div class="col-12">
@@ -15,10 +15,10 @@
               </div>
               <div class="w-100">
                 <div class="d-flex flex-md-row flex-column">
-                  <h3 class="mr-3">ELAN SKIS</h3>
+                  <h3 class="mr-3">{{post.title}}</h3>
                   <div class="ml-auto text-right">
-                    <button class="btn btn-warning">
-                      <i class="material-icons">star_border</i>
+                    <button class="btn btn-danger" (click)="removePost($index)">
+                      <i class="material-icons">highlight_remove</i>
                     </button>
                   </div>
                 </div>
@@ -29,28 +29,30 @@
                       <ul>
                         <li>
                           <i class="fas fa-users"></i>
-                          <strong>Previous Owners:</strong> 3
+                          <strong>Previous Owners:</strong> {{post.previousOwners}}
                         </li>
                         <li>
                           <i class="fas fa-calendar"></i>
-                          <strong>Radius:</strong> 2018
+                          <strong>Radius:</strong> {{post.radius}}
                         </li>
                         <li>
                           <i class="fas fa-info-circle"></i>
-                          <strong>Ski Length:</strong> 190cm
+                          <strong>Ski Length:</strong> {{post.skiLength}}
                         </li>
                       </ul>
                     </div>
                     <div class="col-8 d-flex">
                       <div class="ml-auto text-right">
                         <ul class="d-flex">
-                          <li><i class="fas fa-star text-warning"></i></li>
-                          <li><i class="fas fa-star text-warning"></i></li>
-                          <li><i class="fas fa-star text-warning"></i></li>
-                          <li><i class="fas fa-star text-grey"></i></li>
-                          <li><i class="fas fa-star text-grey"></i></li>
+                          @for (item of loopArray; track $index) {
+                            @if($index < post.rating){
+                              <li><i class="fas fa-star text-warning"></i></li>
+                            }@else {
+                              <li><i class="fas fa-star text-grey"></i></li>
+                            }   
+                          }
                         </ul>
-                        <h2>$21.000</h2>
+                        <h2>{{post.price}} $</h2>
                       </div>
                     </div>
                     <div
@@ -71,4 +73,5 @@
       </div>
     </div>
   </div>
-</div>
+}
+

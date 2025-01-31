@@ -30,4 +30,14 @@ export class PostsService {
     this.array = postsArray; 
   }
   
+  removePost(index: number): void {
+    const existingPostsJson = localStorage.getItem('posts');
+    let postsArray: Post[] = [];
+    if (existingPostsJson) {
+      postsArray = JSON.parse(existingPostsJson);
+    }
+    postsArray.splice(index, 1);
+    localStorage.setItem('posts', JSON.stringify(postsArray));
+    this.array = postsArray;
+  }
 }
